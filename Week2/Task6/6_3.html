@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0 20px;
+            }
+
+            nav {
+                text-align: right;
+                padding: 25px 20px;
+                height: 30px;
+                border-bottom: 1px dashed black;
+                background: linear-gradient(to bottom, lightblue, white);
+                margin: 0 -20px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 0 30px;
+                text-decoration: none;
+                color: purple;
+            }
+
+            h1 {
+                font-size: 40px;
+                text-align: center;
+                margin: 40px 0 25px;
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .text {
+                width: 300px;
+            }
+
+            .text p {
+                color: lightblue;
+                font-size: 35px;
+            }
+
+            .text em {
+                display: block;
+                text-align: right;
+            }
+
+            .text p:hover {
+                font-size: 45px;
+                color: navy;
+            }
+
+            .text .right:hover {
+                color: darkorange;
+            }
+
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                width: 500px;
+                gap: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+            .image-wrapper {
+                width: 165px;
+                height: 250px;
+                position: relative;
+                overflow: visible;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .image-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                opacity: 0.5;
+                transition: all 0.5s ease-out;
+                box-sizing: border-box;
+                transform-origin: left top;
+            }
+
+            .image-wrapper:hover img {
+                opacity: 1;
+                padding: 5px;
+                border: 6px solid navy;
+                z-index: 10;
+                background: white;
+                transform: scale(1.1);
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#">Сезонные акции</a>
+            <a href="#">Контакты</a>
+        </nav>
+        <h1>Горные экскурсии</h1>
+        <div class="container">
+            <div class="gallery">
+                <div class="image-wrapper">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aa054888311301.5dd2cb6d24757.jpg">
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://i.pinimg.com/originals/ff/da/3e/ffda3ec25a14a05d438d7d2f218d8bcb.jpg">
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://i.redd.it/yvcp86srlq9a1.jpg">
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://avatars.mds.yandex.net/i?id=fd8ebcf7b1c56d429d1e8a5d1fa6e009_l-7451251-images-thumbs&n=13">
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://bgpics.ru/pictures/2560x1600/12075-priroda-prirodyi-vyisokogo-kachestva-2560x1600.jpg">
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://youtravel.me/upload/tours/22590/media/a3e/a3e9478b5b0886adf566c1cab6c56c0f.jpeg">
+                </div>
+            </div>
+            <div class="text">
+                <p>Только</p>
+                <p><em class="right">горы!</em></p>
+                <p>Только</p>
+                <p><em class="right">вперёд!</em></p>
+            </div>
+        </div>
+    </body>
+</html>
