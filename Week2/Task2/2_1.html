@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+            }
+
+            nav {
+                text-align: right;
+                padding-bottom: 25px;
+                border-bottom: 1px dashed black;
+            }
+
+            nav a {
+                margin: 10px;
+                text-decoration: none;
+            }
+
+            h1 {
+                font-size: 50px;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .text {
+                width: 300px;
+            }
+
+            .text p {
+                color: lightblue;
+                font-size: 35px;
+            }
+
+            .text em {
+                display: block;
+                text-align: right;
+            }
+
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0px;
+                width: 500px;
+            }
+
+            .gallery img {
+                width: 166.66px;
+                height: 250px;
+                object-fit: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <nav> <a href="#">Сезонные акции</a> <a href="#">Контакты</a> </nav>
+        <h1>Горные экскурсии</h1>
+        <div class="container">
+            <div class="gallery">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aa054888311301.5dd2cb6d24757.jpg">
+                <img src="https://i.pinimg.com/originals/ff/da/3e/ffda3ec25a14a05d438d7d2f218d8bcb.jpg">
+                <img src="https://i.redd.it/yvcp86srlq9a1.jpg">
+                
+                <img src="https://avatars.mds.yandex.net/i?id=fd8ebcf7b1c56d429d1e8a5d1fa6e009_l-7451251-images-thumbs&n=13">
+                <img src="https://bgpics.ru/pictures/2560x1600/12075-priroda-prirodyi-vyisokogo-kachestva-2560x1600.jpg">
+                <img src="https://youtravel.me/upload/tours/22590/media/a3e/a3e9478b5b0886adf566c1cab6c56c0f.jpeg">
+            </div>
+            <div class="text">
+                <p>Только</p>
+                <p><em>горы!</em></p>
+                <p>Только</p>
+                <p><em>вперёд!</em></p>
+            </div>
+        </div>
+    </body>
+</html>
