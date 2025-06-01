@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        header h1{
+            font-size: 40px;
+            font-weight: bold;
+            color: black;
+            font-family: "Arial";
+            background-color: 	LimeGreen;
+        }
+
+        main p{
+            font-size: 20px;
+            color: black;
+            font-family: "Arial";
+        }
+        main a{
+            font-size: 20px;
+            color: black;
+            font-family: "Arial";
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Music shopping</h1>
+    </header>
+    <main>
+        <a>
+            <img src="https://stihi.ru/pics/2019/04/19/5513.jpg" width="200"><img src="https://clipart-library.com/images_k/music-notes-png-transparent/music-notes-png-transparent-18.png" width="200"> 
+        </a>
+        <p>Музыкальное оборудование для вас:
+        </p>
+        <a><img src="https://avatars.mds.yandex.net/get-ydo/3941597/2a000001780319b61c455718b1bfea5e90cb/diploma" width="12"> музыкальные инструменты<br></a>
+        <a><img src="https://avatars.mds.yandex.net/get-ydo/3941597/2a000001780319b61c455718b1bfea5e90cb/diploma" width="12"> аксессуары<br></a>
+        <a><img src="https://avatars.mds.yandex.net/get-ydo/3941597/2a000001780319b61c455718b1bfea5e90cb/diploma" width="12"> звук, микрофоны<br></a>
+        <a><img src="https://avatars.mds.yandex.net/get-ydo/3941597/2a000001780319b61c455718b1bfea5e90cb/diploma" width="12"> концертное оборудование<br></a>
+        <a><img src="https://avatars.mds.yandex.net/get-ydo/3941597/2a000001780319b61c455718b1bfea5e90cb/diploma" width="12"> музыкальная литература<br></a>
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
