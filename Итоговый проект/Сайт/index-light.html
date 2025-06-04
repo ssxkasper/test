@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная | Семейный Альянс</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-background {
+            background: linear-gradient(to right, #e0f2f7, #c1e4ed, #a2d7e3);
+        }
+        .accent-blue-main {
+            background-color: #2196F3;
+        }
+        .hover-accent-blue-main:hover {
+            background-color: #1976D2;
+        }
+        .accent-gold-text {
+            color: #FFC107;
+        }
+        .accent-gold-bg {
+            background-color: #FFC107;
+        }
+        .hover-accent-gold-bg:hover {
+            background-color: #FFA000;
+        }
+        .text-dark-blue {
+            color: #1a237e;
+        }
+        .text-light-blue {
+            color: #e0f2f7;
+        }
+        .bg-card-light {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .border-input-focus:focus {
+            border-color: #2196F3;
+        }
+        header {
+            background-color: rgba(33, 150, 243, 0.9);
+        }
+        footer {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body class="gradient-background text-gray-800 min-h-screen flex flex-col leading-relaxed">
+    <header class="py-5 shadow-lg">
+        <div class="container mx-auto px-5 flex justify-between items-center flex-wrap">
+            <div class="flex items-center">
+                <img src="https://placehold.co/50x50/2196F3/FFFFFF?text=👨‍👩‍👧‍👦" alt="Логотип Семейного Альянса" class="h-12 w-12 mr-4 rounded-full">
+                <span class="text-3xl font-bold text-white">Семейный Альянс</span>
+            </div>
+            <button class="md:hidden text-white text-3xl cursor-pointer menu-toggle" aria-label="Открыть меню">☰</button>
+            <nav class="w-full md:w-auto md:block hidden" id="main-nav">
+                <ul class="flex flex-col md:flex-row list-none mt-4 md:mt-0 items-center">
+                    <li class="md:ml-6 my-2 md:my-0"><a href="index.html" class="text-lg text-white font-bold transition-colors duration-300">Главная</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="registration.html" class="text-lg text-light-blue hover:text-white transition-colors duration-300">Регистрация</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="account.html" class="text-lg text-light-blue hover:text-white transition-colors duration-300">Личный кабинет</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="schedule.html" class="text-lg text-light-blue hover:text-white transition-colors duration-300">Расписание</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="competition.html" class="text-lg text-light-blue hover:text-white transition-colors duration-300">Конкурсы</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="#auth" class="text-lg text-light-blue hover:text-white transition-colors duration-300">Авторизация</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="#about" class="text-lg text-light-blue hover:text-white transition-colors duration-300">О нас</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="#search" class="text-lg text-light-blue hover:text-white transition-colors duration-300">Поиск</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="#contacts" class="text-lg text-light-blue hover:text-white transition-colors duration-300">Контакты</a></li>
+                    <li class="md:ml-6 my-2 md:my-0">
+                        <button class="bg-transparent border-none text-blue-100 hover:text-white cursor-pointer text-lg font-bold">
+                            <a href="index.html" class="text-blue-100 hover:text-white transition-colors duration-300">Темная тема</a>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="py-16 bg-white shadow-sm">
+        <div class="container mx-auto px-5">
+            <h2 class="text-center text-4xl font-bold text-dark-blue mb-10">Наши программы для успеха семьи</h2>
+            <div class="relative max-w-6xl mx-auto overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out slider">
+                    <div class="min-w-full px-5">
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg flex flex-col">
+                            <div class="h-72 bg-gray-200 bg-cover bg-center" style="background-image: url('https://placehold.co/800x300/2196F3/FFFFFF?text=Семейное+Единство');"></div>
+                            <div class="p-5">
+                                <h3 class="text-3xl font-bold text-gray-800 mb-3">Программа: Семейное Единство</h3>
+                                <p class="text-gray-600 text-lg mb-4">Примите участие в интерактивной программе по укреплению семейных уз и гармонии.</p>
+                                <div class="flex items-center mb-4">
+                                    <span class="text-3xl accent-gold-text mr-3">★★★★☆</span>
+                                    <span class="text-lg text-gray-700">4.6/5</span>
+                                </div>
+                                <a href="competition.html" class="inline-block accent-blue-main text-white py-3 px-6 rounded-md font-bold text-lg hover-accent-blue-main transition-colors duration-300">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="min-w-full px-5">
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg flex flex-col">
+                            <div class="h-72 bg-gray-200 bg-cover bg-center" style="background-image: url('https://placehold.co/800x300/2196F3/FFFFFF?text=Семейные+Ценности');"></div>
+                            <div class="p-5">
+                                <h3 class="text-3xl font-bold text-gray-800 mb-3">Программа: Семейные Ценности</h3>
+                                <p class="text-gray-600 text-lg mb-4">Изучите и передайте будущим поколениям важные семейные ценности и традиции.</p>
+                                <div class="flex items-center mb-4">
+                                    <span class="text-3xl accent-gold-text mr-3">★★★★★</span>
+                                    <span class="text-lg text-gray-700">4.8/5</span>
+                                </div>
+                                <a href="competition.html" class="inline-block accent-blue-main text-white py-3 px-6 rounded-md font-bold text-lg hover-accent-blue-main transition-colors duration-300">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-6 slider-controls">
+                    <div class="flex slider-dots">
+                        <div class="w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer dot active"></div>
+                        <div class="w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50 shadow-sm" id="auth">
+        <div class="container mx-auto px-5">
+            <div class="max-w-xl mx-auto p-8 rounded-xl bg-white shadow-lg">
+                <h2 class="text-center text-4xl font-bold text-gray-800 mb-8">Вход в Личный кабинет</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-lg font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" placeholder="Введите ваш email" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md text-gray-800 text-lg border-input-focus transition-colors duration-300">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-lg font-medium text-gray-700 mb-2">Пароль</label>
+                        <input type="password" id="password" placeholder="Введите ваш пароль" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md text-gray-800 text-lg border-input-focus transition-colors duration-300">
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-between items-center pt-4">
+                        <button type="submit" class="w-full sm:w-auto accent-blue-main text-white py-3 px-8 rounded-md font-bold text-lg hover-accent-blue-main transition-colors duration-300 mb-4 sm:mb-0">Войти</button>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors duration-300 text-lg">Забыли пароль?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white shadow-sm" id="about">
+        <div class="container mx-auto px-5">
+            <div class="flex flex-col md:flex-row items-center max-w-6xl mx-auto">
+                <div class="w-full md:w-1/2 min-h-[400px] bg-gray-200 bg-cover bg-center rounded-xl shadow-lg mb-8 md:mb-0 md:mr-10" style="background-image: url('https://placehold.co/600x400/2196F3/FFFFFF?text=Наша+Семья');"></div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-4xl font-bold text-dark-blue mb-6">О проекте «Семейный Альянс»</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-5">«Семейный Альянс» — это платформа, посвященная укреплению семейных связей и раскрытию потенциала каждого члена семьи. Мы предлагаем увлекательные программы и конкурсы, которые помогут вам создать крепкое и счастливое будущее.</p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-5">Мы верим, что понимание своих корней и совместное развитие укрепляет семейные узы и открывает новые горизонты для самопознания. Наши проекты объединяют семьи в увлекательном путешествии к успеху.</p>
+                    <p class="text-gray-700 text-lg leading-relaxed">С 2023 года мы помогли сотням семей достичь гармонии и успеха.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50 shadow-sm">
+        <div class="container mx-auto px-5">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-dark-blue mb-10">Приветствие от команды «Семейный Альянс»</h2>
+                <div class="w-full h-[450px] bg-gray-200 rounded-xl flex items-center justify-center text-gray-600 text-xl shadow-lg">
+                    <iframe src="https://yandex.ru/video/preview/11342688870554558703" width="100%" height="100%" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" class="rounded-xl"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white shadow-sm" id="competitions">
+        <div class="container mx-auto px-5">
+            <h2 class="text-center text-4xl font-bold text-dark-blue mb-10">Наши семейные программы</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-[1.02]">
+                    <div class="h-52 bg-gray-200 bg-cover bg-center" style="background-image: url('https://placehold.co/400x200/2196F3/FFFFFF?text=Семейное+Древо');"></div>
+                    <div class="p-5">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Программа: Семейное Древо</h3>
+                        <p class="text-gray-600 text-base mb-4">Исследуйте свои корни и постройте уникальное семейное древо.</p>
+                        <div class="flex justify-between text-gray-600 text-sm mb-4">
+                            <span>Участников: 150</span>
+                            <span>Рейтинг: 4.5</span>
+                        </div>
+                        <a href="competition.html" class="block text-center accent-blue-main text-white py-3 px-6 rounded-md font-bold hover-accent-blue-main transition-colors duration-300">Присоединиться</a>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-[1.02]">
+                    <div class="h-52 bg-gray-200 bg-cover bg-center" style="background-image: url('https://placehold.co/400x200/2196F3/FFFFFF?text=Наши+Традиции');"></div>
+                    <div class="p-5">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Программа: Наши Традиции</h3>
+                        <p class="text-gray-600 text-base mb-4">Поймите, как семейные традиции формируют будущее, и создайте свои.</p>
+                        <div class="flex justify-between text-gray-600 text-sm mb-4">
+                            <span>Участников: 95</span>
+                            <span>Рейтинг: 4.7</span>
+                        </div>
+                        <a href="competition.html" class="block text-center accent-blue-main text-white py-3 px-6 rounded-md font-bold hover-accent-blue-main transition-colors duration-300">Присоединиться</a>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-[1.02]">
+                    <div class="h-52 bg-gray-200 bg-cover bg-center" style="background-image: url('https://placehold.co/400x200/2196F3/FFFFFF?text=Путь+к+Гармонии');"></div>
+                    <div class="p-5">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Программа: Путь к Гармонии</h3>
+                        <p class="text-gray-600 text-base mb-4">Изучите методы построения гармоничных отношений в семье.</p>
+                        <div class="flex justify-between text-gray-600 text-sm mb-4">
+                            <span>Участников: 60</span>
+                            <span>Рейтинг: 4.9</span>
+                        </div>
+                        <a href="competition.html" class="block text-center accent-blue-main text-white py-3 px-6 rounded-md font-bold hover-accent-blue-main transition-colors duration-300">Присоединиться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50 shadow-sm" id="search">
+        <div class="container mx-auto px-5">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-center text-4xl font-bold text-dark-blue mb-10">Найти программу</h2>
+                <form class="flex flex-col sm:flex-row">
+                    <input type="text" placeholder="Введите название программы..." class="flex-1 px-5 py-4 bg-white border border-gray-300 rounded-md sm:rounded-r-none text-gray-800 text-lg border-input-focus transition-colors duration-300 mb-4 sm:mb-0">
+                    <button type="submit" class="accent-blue-main text-white py-4 px-8 rounded-md sm:rounded-l-none font-bold text-lg hover-accent-blue-main transition-colors duration-300">Поиск</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white shadow-sm">
+        <div class="container mx-auto px-5">
+            <h2 class="text-center text-4xl font-bold text-dark-blue mb-10">Отзывы наших семей</h2>
+            <div class="relative max-w-5xl mx-auto overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out reviews-track">
+                    <div class="min-w-full px-5">
+                        <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
+                            <div class="flex items-center mb-5">
+                                <div class="w-16 h-16 rounded-full bg-gray-200 bg-cover bg-center mr-5" style="background-image: url('https://placehold.co/60x60/2196F3/FFFFFF?text=👨‍👩‍👧‍👦');"></div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-800">Семья Смирновых</h4>
+                                    <p class="text-gray-600 text-sm mt-1">20 мая 2025</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 text-lg italic mb-5">"Программа "Семейное Наследие" стала настоящим открытием для нашей семьи! Мы узнали столько нового о себе и своих корнях. Интерфейс очень понятный, а результаты вдохновляют на дальнейшие изыскания. Очень рекомендуем всем, кто интересуется своим наследием!"</p>
+                            <a href="#" class="inline-block text-blue-600 hover:text-blue-800 transition-colors duration-300">Читать полностью</a>
+                        </div>
+                    </div>
+                    <div class="min-w-full px-5">
+                        <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
+                            <div class="flex items-center mb-5">
+                                <div class="w-16 h-16 rounded-full bg-gray-200 bg-cover bg-center mr-5" style="background-image: url('https://placehold.co/60x60/2196F3/FFFFFF?text=👨‍👩‍👧‍👦');"></div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-800">Семья Ивановых</h4>
+                                    <p class="text-gray-600 text-sm mt-1">10 апреля 2025</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 text-lg italic mb-5">"Мы очень благодарны "Семейному Альянсу" за возможность участвовать в программе "Путь к Гармонии". Это помогло нам лучше понять друг друга и укрепить наши отношения. Замечательный опыт для каждой семьи!"</p>
+                            <a href="#" class="inline-block text-blue-600 hover:text-blue-800 transition-colors duration-300">Читать полностью</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8 reviews-dots">
+                    <div class="w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer reviews-dot active"></div>
+                    <div class="w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer reviews-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50 shadow-sm">
+        <div class="container mx-auto px-5">
+            <div class="max-w-2xl mx-auto p-10 rounded-xl bg-white shadow-lg">
+                <h2 class="text-center text-4xl font-bold text-dark-blue mb-8">Подпишитесь на семейные новости</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label for="subscribe-name" class="block text-lg font-medium text-gray-700 mb-2">Ваше имя</label>
+                        <input type="text" id="subscribe-name" placeholder="Введите ваше имя" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md text-gray-800 text-lg border-input-focus transition-colors duration-300">
+                    </div>
+                    <div>
+                        <label for="subscribe-email" class="block text-lg font-medium text-gray-700 mb-2">Ваш Email</label>
+                        <input type="email" id="subscribe-email" placeholder="Введите ваш email" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-md text-gray-800 text-lg border-input-focus transition-colors duration-300">
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="subscribe-agree" class="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <label for="subscribe-agree" class="ml-3 text-gray-700 text-base">Я согласен(на) получать информацию о новых программах и конкурсах.</label>
+                    </div>
+                    <button type="submit" class="block w-full accent-blue-main text-white py-4 px-8 rounded-md font-bold text-xl hover-accent-blue-main transition-colors duration-300">Подписаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-800 py-10 text-blue-100 shadow-inner" id="contacts">
+        <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="footer-about">
+                <div class="flex items-center mb-5">
+                    <img src="https://placehold.co/40x40/2196F3/FFFFFF?text=👨‍👩‍👧‍👦" alt="Логотип Семейного Альянса" class="h-10 w-10 mr-3 rounded-full">
+                    <span class="text-xl font-bold text-white">Семейный Альянс</span>
+                </div>
+                <div class="mb-2">
+                    Семейная почта: <a href="mailto:family@alliance.com" class="text-light-contrast hover:text-white transition-colors duration-300">family@alliance.com</a>
+                </div>
+                <div>
+                    Связь с миром: <a href="tel:+79998887766" class="text-light-contrast hover:text-white transition-colors duration-300">+7 (777) 777-77-77</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 class="text-white text-lg font-bold mb-5">Навигация</h3>
+                <ul>
+                    <li class="mb-3"><a href="index.html" class="text-blue-100 hover:text-white transition-colors duration-300">Главная</a></li>
+                    <li class="mb-3"><a href="registration.html" class="text-blue-100 hover:text-white transition-colors duration-300">Регистрация</a></li>
+                    <li class="mb-3"><a href="competition.html" class="text-blue-100 hover:text-white transition-colors duration-300">Конкурсы</a></li>
+                    <li class="mb-3"><a href="account.html" class="text-blue-100 hover:text-white transition-colors duration-300">Личный кабинет</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3 class="text-white text-lg font-bold mb-5">Полезная Информация</h3>
+                <ul>
+                    <li class="mb-3"><a href="schedule.html" class="text-blue-100 hover:text-white transition-colors duration-300">Расписание</a></li>
+                    <li class="mb-3"><a href="404.html" class="text-blue-100 hover:text-white transition-colors duration-300">О нас</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-10 pt-5 border-t border-blue-700">
+            <p>© 2025 «Семейный Альянс». Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
