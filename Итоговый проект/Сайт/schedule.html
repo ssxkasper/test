@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание конкурсов (Темная тема) | Семейный Альянс</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-background-dark {
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+        }
+        .accent-blue-dark {
+            background-color: #91e5f6;
+        }
+        .hover-accent-blue-dark:hover {
+            background-color: #73c8df;
+        }
+        .accent-gold-text {
+            color: #FFC107;
+        }
+        .text-light-contrast {
+            color: #e0eaff;
+        }
+        .text-accent-link {
+            color: #91e5f6;
+        }
+        .bg-card-dark {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .border-input-dark-focus:focus {
+            border-color: #91e5f6;
+        }
+        header {
+            background-color: rgba(0, 0, 50, 0.8);
+        }
+        footer {
+            background-color: #0f0c29;
+        }
+        .schedule-table th,
+        .schedule-table td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            text-align: center;
+        }
+        .schedule-table th {
+            background-color: #302b63;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .schedule-table td {
+            background-color: rgba(255, 255, 255, 0.05);
+            height: 80px;
+        }
+        .time-slot {
+            font-weight: bold;
+            color: #91e5f6;
+        }
+        .competition-cell {
+            position: relative;
+            padding: 0;
+            vertical-align: middle;
+        }
+        .competition-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 5px;
+        }
+        .competition-name {
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #e0eaff;
+        }
+        .places-available {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto;
+            color: #ffffff;
+        }
+        .places-available.free {
+            background-color: #4CAF50;
+        }
+        .places-available.low {
+            background-color: #FFC107;
+        }
+        .places-available.full {
+            background-color: #F44336;
+        }
+        .legend-color.free {
+            background-color: #4CAF50;
+        }
+        .legend-color.low {
+            background-color: #FFC107;
+        }
+        .legend-color.full {
+            background-color: #F44336;
+        }
+        @media (max-width: 992px) {
+            .schedule-table {
+                font-size: 14px;
+            }
+            .competition-name {
+                font-size: 12px;
+            }
+            .places-available {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 768px) {
+            .schedule-table th,
+            .schedule-table td {
+                padding: 8px 4px;
+            }
+            .time-slot {
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                white-space: nowrap;
+            }
+        }
+        @media (max-width: 576px) {
+            .schedule-table {
+                font-size: 12px;
+            }
+            .competition-name {
+                display: none;
+            }
+            .schedule-title {
+                font-size: 28px;
+            }
+            .schedule-date {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="gradient-background-dark text-light-contrast min-h-screen flex flex-col leading-relaxed">
+    <header class="py-5 shadow-lg">
+        <div class="container mx-auto px-5 flex justify-between items-center flex-wrap">
+            <div class="flex items-center">
+                <img src="https://placehold.co/50x50/91e5f6/0f0c29?text=👨‍👩‍👧‍👦" alt="Логотип Семейного Альянса" class="h-12 w-12 mr-4 rounded-full">
+                <span class="text-3xl font-bold text-accent-link">Семейный Альянс</span>
+            </div>
+            <button class="md:hidden text-accent-link text-3xl cursor-pointer menu-toggle" aria-label="Открыть меню">☰</button>
+            <nav class="w-full md:w-auto md:block hidden" id="main-nav">
+                <ul class="flex flex-col md:flex-row list-none mt-4 md:mt-0 items-center">
+                    <li class="md:ml-6 my-2 md:my-0"><a href="index.html" class="text-lg text-light-contrast hover:text-white transition-colors duration-300">Главная</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="registration.html" class="text-lg text-light-contrast hover:text-white transition-colors duration-300">Регистрация</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="account.html" class="text-lg text-light-contrast hover:text-white transition-colors duration-300">Личный кабинет</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="schedule.html" class="text-lg text-white hover:text-white transition-colors duration-300 font-bold">Расписание</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="competition.html" class="text-lg text-light-contrast hover:text-white transition-colors duration-300">Конкурсы</a></li>
+                    <li class="md:ml-6 my-2 md:my-0 logout-btn-mobile-li md:hidden">
+                        <a href="#" class="block w-full bg-red-700 text-white py-3 px-6 rounded-md font-bold text-lg text-center hover:bg-red-800 transition-colors duration-300">Выйти из Альянса</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="flex-1 py-16 flex justify-center items-start">
+        <div class="container mx-auto px-5 max-w-full">
+            <h1 class="text-center text-5xl font-bold text-white mb-10">Расписание конкурсов</h1>
+            <div class="text-center text-3xl font-semibold text-accent-link mb-8">25 июня 2025 года</div>
+            
+            <div class="flex justify-center gap-x-8 gap-y-4 mb-10 flex-wrap text-light-contrast">
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full bg-green-500"></div>
+                    <span>Много свободных мест</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full bg-accent-gold-text" style="background-color: #FFC107;"></div>
+                    <span>Мало свободных мест</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full bg-red-500"></div>
+                    <span>Мест нет</span>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto rounded-xl shadow-xl">
+                <table class="schedule-table w-full whitespace-nowrap">
+                    <thead>
+                        <tr>
+                            <th class="py-4 px-2">Время</th>
+                            <th class="py-4 px-2">9:00-10:00</th>
+                            <th class="py-4 px-2">10:00-11:00</th>
+                            <th class="py-4 px-2">11:00-12:00</th>
+                            <th class="py-4 px-2">12:00-13:00</th>
+                            <th class="py-4 px-2">13:00-14:00</th>
+                            <th class="py-4 px-2">14:00-15:00</th>
+                            <th class="py-4 px-2">15:00-16:00</th>
+                            <th class="py-4 px-2">16:00-17:00</th>
+                            <th class="py-4 px-2">17:00-18:00</th>
+                            <th class="py-4 px-2">18:00-19:00</th>
+                            <th class="py-4 px-2">19:00-20:00</th>
+                            <th class="py-4 px-2">20:00-21:00</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time-slot">Рисунок семьи</td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Рисунок семьи</div>
+                                    <div class="places-available free bg-green-500 text-white">10</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Рисунок семьи</div>
+                                    <div class="places-available free bg-green-500 text-white">9</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="time-slot">Семейные гонки</td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Семейные гонки</div>
+                                    <div class="places-available low bg-accent-gold-text" style="background-color: #FFC107;">3</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Семейные гонки</div>
+                                    <div class="places-available free bg-green-500 text-white">5</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="time-slot">Большие знания</td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Большие знания</div>
+                                    <div class="places-available full bg-red-500 text-white">0</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Большие знания</div>
+                                    <div class="places-available low bg-accent-gold-text" style="background-color: #FFC107;">4</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="time-slot">Секреты семейного счастья</td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Секреты семейного счастья</div>
+                                    <div class="places-available free bg-green-500 text-white">6</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Секреты семейного счастья</div>
+                                    <div class="places-available free bg-green-500 text-white">5</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="time-slot">Кухня моей семьи</td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Кухня моей семьи</div>
+                                    <div class="places-available free bg-green-500 text-white">7</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell">
+                                <div class="competition-info">
+                                    <div class="competition-name">Кухня моей семьи</div>
+                                    <div class="places-available low bg-accent-gold-text" style="background-color: #FFC107;">3</div>
+                                </div>
+                            </td>
+                            <td class="competition-cell"></td>
+                            <td class="competition-cell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-light-contrast shadow-inner">
+        <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="footer-about">
+                <div class="flex items-center mb-5">
+                    <img src="https://placehold.co/40x40/91e5f6/0f0c29?text=👨‍👩‍👧‍👦" alt="Логотип Семейного Альянса" class="h-10 w-10 mr-3 rounded-full">
+                    <span class="text-xl font-bold text-accent-link">Семейный Альянс</span>
+                </div>
+                <div class="mb-2">
+                    Семейная почта: <a href="mailto:family@alliance.com" class="text-light-contrast hover:text-white transition-colors duration-300">family@alliance.com</a>
+                </div>
+                <div>
+                    Связь с миром: <a href="tel:+79998887766" class="text-light-contrast hover:text-white transition-colors duration-300">+7 (777) 777-77-77</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 class="text-white text-lg font-bold mb-5">Навигация</h3>
+                <ul>
+                    <li class="mb-3"><a href="index.html" class="text-light-contrast hover:text-white transition-colors duration-300">Главная</a></li>
+                    <li class="mb-3"><a href="registration.html" class="text-light-contrast hover:text-white transition-colors duration-300">Регистрация</a></li>
+                    <li class="mb-3"><a href="competition.html" class="text-light-contrast hover:text-white transition-colors duration-300">Конкурсы</a></li>
+                    <li class="mb-3"><a href="account.html" class="text-light-contrast hover:text-white transition-colors duration-300">Личный кабинет</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3 class="text-white text-lg font-bold mb-5">Полезная Информация</h3>
+                <ul>
+                    <li class="mb-3"><a href="schedule.html" class="text-light-contrast hover:text-white transition-colors duration-300">Расписание</a></li>
+                    <li class="mb-3"><a href="404.html" class="text-light-contrast hover:text-white transition-colors duration-300">О нас</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-10 pt-5 border-t border-[#333]">
+            <p>© 2025 «Семейный Альянс». Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
