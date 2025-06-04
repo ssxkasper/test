@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семейное Наследие: Путь к Успеху (Темная тема) | Семейный Альянс</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-background-dark {
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+        }
+        .accent-blue-dark {
+            background-color: #91e5f6;
+        }
+        .hover-accent-blue-dark:hover {
+            background-color: #73c8df;
+        }
+        .accent-gold-text {
+            color: #FFC107;
+        }
+        .text-light-contrast {
+            color: #e0eaff;
+        }
+        .text-accent-link {
+            color: #91e5f6;
+        }
+        .bg-card-dark {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .border-input-dark-focus:focus {
+            border-color: #91e5f6;
+        }
+        header {
+            background-color: rgba(0, 0, 50, 0.8);
+        }
+        footer {
+            background-color: #0f0c29;
+        }
+    </style>
+</head>
+<body class="gradient-background-dark text-light-contrast min-h-screen flex flex-col leading-relaxed">
+    <header class="py-5 shadow-lg">
+        <div class="container mx-auto px-5 flex justify-between items-center flex-wrap">
+            <div class="flex items-center">
+                <img src="https://placehold.co/50x50/91e5f6/0f0c29?text=👨‍👩‍👧‍👦" alt="Логотип Семейного Альянса" class="h-12 w-12 mr-4 rounded-full">
+                <span class="text-3xl font-bold text-accent-link">Семейный Альянс</span>
+            </div>
+            <button class="md:hidden text-accent-link text-3xl cursor-pointer menu-toggle" aria-label="Открыть меню">☰</button>
+            <nav class="w-full md:w-auto md:block hidden" id="main-nav">
+                <ul class="flex flex-col md:flex-row list-none mt-4 md:mt-0 items-center">
+                    <li class="md:ml-6 my-2 md:my-0"><a href="index.html" class="text-lg text-light-contrast hover:text-white transition-colors duration-300">Главная</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="account.html" class="text-lg text-white font-bold transition-colors duration-300">Личный кабинет</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="schedule.html" class="text-lg text-light-contrast hover:text-white transition-colors duration-300">Расписание</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="competition.html" class="text-lg text-light-contrast hover:text-white transition-colors duration-300">Конкурсы</a></li>
+                    <li class="md:ml-6 my-2 md:my-0"><a href="index.html" class="text-lg text-red-400 hover:text-red-500 transition-colors duration-300">Выход из ЛК</a></li>
+                    <li class="md:ml-6 my-2 md:my-0">
+                        <button class="bg-transparent border-none text-accent-link hover:text-white cursor-pointer text-lg font-bold">
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="flex-1 py-16 flex justify-center items-start">
+        <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl">
+            <h1 class="col-span-full text-center text-5xl font-bold text-white mb-10">Личный кабинет</h1>
+            
+            <div class="profile-card bg-card-dark rounded-xl p-8 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-20 h-20 rounded-full bg-[#24243e] flex items-center justify-center text-4xl accent-blue-dark mr-5" 
+                            style="background-image: url('https://placehold.co/80x80/0f0c29/91e5f6?text=👨‍👩‍👧‍👦'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="text-3xl font-bold text-white mb-1">Валентина Кей</h3>
+                        <p class="text-light-contrast">Участник конкурса</p>
+                    </div>
+                </div>
+                
+                <div class="profile-details mt-5">
+                    <div class="mb-4">
+                        <div class="text-light-contrast text-sm mb-1">Семейная почта</div>
+                        <div class="text-lg text-light-contrast">family@alliance.com</div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="text-light-contrast text-sm mb-1">Семейный телефон</div>
+                        <div class="text-lg text-light-contrast">+7 (777) 777-77-77</div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="text-light-contrast text-sm mb-1">Дата регистрации</div>
+                        <div class="text-lg text-light-contrast">02.02.2020</div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="text-light-contrast text-sm mb-1">Участие в конкурсах</div>
+                        <div class="text-lg text-light-contrast">5</div>
+                    </div>
+                    
+                    <a href="#" class="logout-btn hidden md:block w-full bg-red-700 text-white py-4 px-8 rounded-md font-bold text-xl text-center mt-8 hover:bg-red-800 transition-colors duration-300">Выход из профиля</a>
+                </div>
+            </div>
+            
+            <div class="booking-form bg-card-dark rounded-xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold text-white mb-6">Запись на конкурс</h2>
+                <form>
+                    <div class="mb-5">
+                        <label for="competition" class="block mb-2 text-light-contrast text-lg">Конкурс*</label>
+                        <select id="competition" class="w-full py-3 px-4 bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.15)] rounded-md text-light-contrast text-lg border-input-dark-focus transition-colors duration-300" required>
+                            <option value="">Выберите конкурс</option>
+                            <option value="1">Рисунок семьи</option>
+                            <option value="2">Семейные гонки</option>
+                            <option value="3">Большие знания</option>
+                            <option value="4">Секреты семейного счастья</option>
+                            <option value="5">Кухня моей семьи</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label for="date" class="block mb-2 text-light-contrast text-lg">Дата*</label>
+                        <input type="text" id="date" class="w-full py-3 px-4 bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.15)] rounded-md text-light-contrast text-lg border-input-dark-focus transition-colors duration-300" value="8 июля 2024" readonly>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-5">
+                        <div class="flex-1">
+                            <label for="time" class="block mb-2 text-light-contrast text-lg">Время*</label>
+                            <select id="time" class="w-full py-3 px-4 bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.15)] rounded-md text-light-contrast text-lg border-input-dark-focus transition-colors duration-300" required>
+                                <option value="">Выберите время</option>
+                                <option value="9:00">9:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex-1">
+                            <label for="people" class="block mb-2 text-light-contrast text-lg">Участники*</label>
+                            <input type="number" id="people" class="w-full py-3 px-4 bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.15)] rounded-md text-light-contrast text-lg border-input-dark-focus transition-colors duration-300" min="1" max="10" value="1" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full accent-blue-dark text-[#0f0c29] py-4 px-8 rounded-md font-bold text-xl mt-5 hover-accent-blue-dark transition-colors duration-300">Записаться</button>
+                </form>
+            </div>
+            
+            <div class="bookings-list bg-card-dark rounded-xl p-8 shadow-xl lg:col-span-1">
+                <h2 class="text-3xl font-bold text-white mb-6">Предстоящие конкурсы</h2>
+                
+                <div class="booking-item bg-[rgba(255,255,255,0.08)] rounded-lg p-5 mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center flex-wrap gap-4">
+                    <div class="booking-info">
+                        <div class="text-xl font-bold text-accent-link mb-1">Рисунок семьи</div>
+                        <div class="text-light-contrast text-sm">8 июля 2024, 11:00 • 10 участника</div>
+                    </div>
+                    <div class="booking-actions">
+                        <button class="cancel-btn bg-red-700 text-white py-2 px-5 rounded-md font-bold text-base hover:bg-red-800 transition-colors duration-300">Отменить</button>
+                    </div>
+                </div>
+                
+                <div class="booking-item bg-[rgba(255,255,255,0.08)] rounded-lg p-5 mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center flex-wrap gap-4">
+                    <div class="booking-info">
+                        <div class="text-xl font-bold text-accent-link mb-1">Семейные гонки</div>
+                        <div class="text-light-contrast text-sm">8 июля 2024, 14:00 • 6 участника</div>
+                    </div>
+                    <div class="booking-actions">
+                        <button class="cancel-btn bg-red-700 text-white py-2 px-5 rounded-md font-bold text-base hover:bg-red-800 transition-colors duration-300">Отменить</button>
+                    </div>
+                </div>
+                
+                <div class="booking-item bg-[rgba(255,255,255,0.08)] rounded-lg p-5 mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center flex-wrap gap-4">
+                    <div class="booking-info">
+                        <div class="text-xl font-bold text-accent-link mb-1">Большие знания</div>
+                        <div class="text-light-contrast text-sm">8 июля 2024, 16:00 • 3 участник</div>
+                    </div>
+                    <div class="booking-actions">
+                        <button class="cancel-btn bg-red-700 text-white py-2 px-5 rounded-md font-bold text-base hover:bg-red-800 transition-colors duration-300">Отменить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-light-contrast shadow-inner">
+        <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="footer-about">
+                <div class="flex items-center mb-5">
+                    <img src="https://placehold.co/40x40/91e5f6/0f0c29?text=👨‍👩‍👧‍👦" alt="Логотип Семейного Альянса" class="h-10 w-10 mr-3 rounded-full">
+                    <span class="text-xl font-bold text-accent-link">Семейный Альянс</span>
+                </div>
+                <div class="mb-2">
+                    Семейная почта: <a href="mailto:family@alliance.com" class="text-light-contrast hover:text-white transition-colors duration-300">family@alliance.com</a>
+                </div>
+                <div>
+                    Связь с миром: <a href="tel:+79998887766" class="text-light-contrast hover:text-white transition-colors duration-300">+7 (777) 777-77-77</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 class="text-white text-lg font-bold mb-5">Навигация</h3>
+                <ul>
+                    <li class="mb-3"><a href="index.html" class="text-light-contrast hover:text-white transition-colors duration-300">Главная</a></li>
+                    <li class="mb-3"><a href="competition.html" class="text-light-contrast hover:text-white transition-colors duration-300">Конкурсы</a></li>
+                    <li class="mb-3"><a href="account.html" class="text-light-contrast hover:text-white transition-colors duration-300">Личный кабинет</a></li>
+                    <li class="mb-3"><a href="index.html" class="text-light-contrast hover:text-white transition-colors duration-300">Выход из ЛК</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3 class="text-white text-lg font-bold mb-5">Полезная Информация</h3>
+                <ul>
+                    <li class="mb-3"><a href="schedule.html" class="text-light-contrast hover:text-white transition-colors duration-300">Расписание</a></li>
+                    <li class="mb-3"><a href="404.html" class="text-light-contrast hover:text-white transition-colors duration-300">О нас</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-10 pt-5 border-t border-[#333]">
+            <p>© 2025 «Семейный Альянс». Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
